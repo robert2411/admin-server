@@ -7,7 +7,7 @@ COPY . /project
 RUN mvn clean package
 
 
-FROM gcr.io/distroless/java:11 AS eureka-server
+FROM gcr.io/distroless/java:11 AS admin-server
 COPY --from=builder /project/target/admin-server.jar /app/admin-server.jar
 WORKDIR /app
 CMD ["admin-server.jar"]
