@@ -14,6 +14,15 @@
 | CONFIG_DISCOVERY_SERVICE_ID | config-server         |            | The name under witch the config server is registed in eureka                          |
 | CONFIG_FAIL_FAST            | false                 | true/false | Fail application startup if the config server is not found (6 retries before failure) |
 
+## Tags
+### latest
+ - The last release (master branch on git)
+ 
+### dev
+ - The last development release (develop branch on git)
+
+### Version number
+ - A specific version (Tag on git)
 
 ## Release Notes
 ### v1.1.0
