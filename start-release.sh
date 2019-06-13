@@ -5,11 +5,10 @@ git pull
 git checkout master
 git pull
 
-CURRENT_VERSION=$(xmllint --xpath "//*[local-name()='project']/*[local-name()='version']/text()" pom.xml)
+CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+echo "Current version: ${CURRENT_VERSION}"
 
 git merge develop
-
-echo "Current version: ${CURRENT_VERSION}"
 
 echo "Is this a breaking change, new feature or bugfix?"
 echo "type b for breaking change"
@@ -41,6 +40,7 @@ mvn org.codehaus.mojo:versions-maven-plugin:set -DnewVersion=${NEW_VERSION} vers
 git add pom.xml
 git commit -m "Release v${NEW_VERSION}"
 git tag -a ${NEW_VERSION} -m "Release v${NEW_VERSION}"
+git pull
 git push
 git push --tags
 
@@ -51,5 +51,6 @@ git merge master
 mvn org.codehaus.mojo:versions-maven-plugin:set -DnextSnapshot=true versions:commit
 git add pom.xml
 git commit -m "Prepare for new development"
+git pull
 git push
 git push --tags
