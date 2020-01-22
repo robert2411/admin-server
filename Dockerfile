@@ -1,4 +1,4 @@
-FROM robert2411/base-image:1.0.0 AS builder
+FROM robert2411/base-image:1.0.1 AS builder
 
 WORKDIR /project
 COPY ./pom.xml /project/pom.xml
