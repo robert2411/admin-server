@@ -5,7 +5,7 @@ git pull
 git checkout master
 git pull
 
-CURRENT_VERSION=$(xmllint --xpath "//*[local-name()='project']/*[local-name()='version']/text()" pom.xml)
+CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
 
 git merge develop
 
