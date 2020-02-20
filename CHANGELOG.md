@@ -2,7 +2,7 @@
 
 ## Upcomming
 
-## V1.1.1
+## V1.3.0
  - Updated the dependencies
 
 ## v1.1.0
