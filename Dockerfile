@@ -1,4 +1,4 @@
-FROM maven:3-jdk-11 AS builder AS builder
+FROM maven:3-jdk-11 AS builder
 
 WORKDIR /project
 COPY ./pom.xml /project/pom.xml
